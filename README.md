@@ -1,1 +1,1 @@
-# bet-WC
+# mini game bet score final for world cup champions
