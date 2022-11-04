@@ -1,0 +1,5 @@
+- 4/11/2022 : build code base for project bet WC
+- check connection success 
+ npm start 
+ client `localhost:3200/health`
+ admin `localhost:3200/admin/health`
