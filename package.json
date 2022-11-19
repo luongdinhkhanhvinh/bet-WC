@@ -1,17 +1,9 @@
 {
-  "name": "euro2016",
-  "description": "UEFA Euro 2021: Betting with your friends",
-  "version": "0.1.0",
+  "name": "bet",
+  "version": "0.0.0",
   "private": true,
-  "repository": {
-    "type": "git"
-  },
   "scripts": {
-    "start": "nodemon index.js",
-    "migrate:latest": "knex migrate:latest",
-    "migrate:rollback": "knex migrate:rollback",
-    "migrate:make": "knex migrate:make",
-    "migrate:list": "knex migrate:list"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "axios": "^0.21.2",
