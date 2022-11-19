@@ -1,6 +1,6 @@
 module.exports =
     # URL origin of the web server
-    origin: 'http://localhost:8080'
+    origin: 'http://localhost:8081'
 
     # PostreSQL connection URL
     db: 'postgres://user:password@localhost:port/database'
@@ -11,7 +11,7 @@ module.exports =
     ca: '/path/to/chain.pem'
 
     # Port to listen on
-    httpPort: 8080
+    httpPort: 8081
     httpsPort: 3000
 
     # Used to secure session cookies. Set to a random string

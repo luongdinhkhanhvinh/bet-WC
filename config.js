@@ -1,6 +1,6 @@
 fs = require('fs');
 module.exports = {
-    origin: process.env.ORIGIN || "http://localhost:8080",
+    origin: process.env.ORIGIN || "http://localhost:8081",
     db: {
         username: process.env.DB_USER || "doadmin",
         password: process.env.DB_PASSWORD || "AVNS_w6o_w8PBxYdl3Wo8SMK",
