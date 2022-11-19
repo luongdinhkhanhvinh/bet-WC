@@ -1,0 +1,81 @@
+{{#> layout}}
+{{#*inline "head"}}
+<title>Admin - {{@websiteName}}</title>
+{{/inline}}
+{{#*inline "body"}}
+{{> navbar}}
+<div class="container top-70">
+<h2 class="text-color-white">Quản trị viên</h2>
+{{#if error}}
+<div class="alert alert-danger" role="alert">
+    {{error}}
+</div>
+{{/if}}
+{{#if message}}
+<div class="alert alert-success">
+    {{message}}
+</div>
+{{/if}}
+<h3 class="text-color-white">Đặt đội cho các trận đấu trong tương lai</h3>
+<form method="post" action="/admin" class="form-horizontal">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <div class="form-row">
+        <div class="form-group col-sm-12">
+            <label class="text-color-white">Cuộc thi đấu</label>
+            <select name="match" class="form-control">
+                <option disabled>--- Trận ---</option>
+                {{#each matchesWithoutTeams}}
+                <option value="{{id}}">{{placeholder_home}} : {{placeholder_away}} ({{calendarShort starts_at}}) {{match_type_name}}</option>
+                {{/each}}
+            </select>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-sm-6">
+            <label class="text-color-white">Đội chủ nhà</label>
+            <select name="home" class="form-control" required>
+                <option disabled>--- Đội nhà ---</option>
+                {{#each teams}}
+                <option value="{{id}}">{{code}} {{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="form-group col-sm-6">
+            <label class="text-color-white">Đội khách</label>
+            <select name="away" class="form-control">
+                <option disabled>--- Đội khách ---</option>
+                {{#each teams}}
+                <option value="{{id}}">{{code}} {{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+    </div>
+    <button name="command" value="set_teams" type="submit" class="btn btn-primary">Set Teams</button>
+</form>
+<h3 class="mt-3 text-color-white">Đặt kết quả trận đấu</h3>
+<form method="post" action="/admin" class="form-horizontal">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <div class="form-row">
+        <div class="form-group col-sm-12">
+            <label class="text-color-white">Cuộc thi đấu</label>
+            <select name="match" class="form-control">
+                <option disabled>--- Trận ---</option>
+                {{#each liveMatches}}
+                <option value="{{id}}">{{home_team_name}} : {{away_team_name}} ({{calendarShort starts_at}}) {{match_type_name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="form-group col-sm-6">
+            <label class="text-color-white">Bàn thắng đội chủ nhà</label>
+            <input name="home" type="number" min="0" max="20" autocomplete="off" class="form-control" required>
+        </div>
+        <div class="form-group col-sm-6">
+            <label class="text-color-white">Bàn thắng đội khách</label>
+            <input name="away" type="number" min="0" max="20" autocomplete="off" class="form-control" required>
+        </div>
+    </div>
+    <button name="command" value="match_result" type="submit" class="btn btn-primary">Lưu kết quả trận đấu</button>
+</form>
+</div>
+{{/inline}}
+{{/layout}}

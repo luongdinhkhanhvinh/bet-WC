@@ -1,0 +1,81 @@
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top" style="background: linear-gradient(90deg,#020f2a 0%,#3b1f62 25%,#702f97 50%,#3b1f62 75%,#020f2a 100%);">
+    
+    <div class="container">
+        <img src={{asset "/cup.png"}} alt='Logo' style="height: 85px;"/>
+        <img src={{asset "/wc2022-giphy.gif"}} alt='Logo' 
+        style="
+            position: absolute;
+            margin-bottom: 25px;
+            margin-left: 20px;
+        "
+        />
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbarSupportedContent" class="navbar-collapse collapse" >
+            <ul class="navbar-nav" style="
+            padding-left: revert;
+            margin-left: auto;
+            text-align: center;
+            align-content: center;
+            align-items: center;
+            width: 90%;
+">
+                {{#if loggedIn}}
+                <li class="nav-item space-15"><a class="nav-link" href="/me">HỒ SƠ</a></li>
+                <li class="nav-item space-15"><a class="nav-link" href="/mybets">CƯỢC
+                    {{#if (gt upcomingMatchesWithoutBet 0)}}<span class="badge badge-warning">{{ upcomingMatchesWithoutBet }}</span>{{/if}}
+                </a></li>
+                {{/if}}
+                <li class="nav-item space-15">
+                    <a class="nav-link" href="/live">TRỰC TIẾP
+                    {{#if hasLiveMatches}}<span class="badge badge-success">HIỆN TẠI</span>{{/if}}
+                </a>
+                </li>
+                {{#if loggedIn}}
+                <a class="navbar-brand" href="/mybets">
+                 <img src={{asset "/header-logo.png"}} alt='Logo' style=""/>
+                </a>    
+                {{else}}
+                {{/if}}
+               
+               
+                <li class="nav-item space-15"><a class="nav-link" href="/past">LỊCH SỬ
+                    {{#if (gt unseenPastMatches 0)}}<span class="badge badge-warning">{{unseenPastMatches}}</span>{{/if}}
+                </a></li>
+                <li class="nav-item space-15"><a class="nav-link" href="/highscore">XẾP HẠNG</a></li>
+                 
+                {{#if loggedIn}}
+                <li class="nav-item dropdown space-15">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                       
+                        {{!-- <span>
+                        {{user.name}}
+                        </span> --}}
+
+                         <img src='https://joeschmoe.io/api/v1/random' alt='Han Solo' 
+                        style="width: 30px;
+                         border-radius: 100%;
+                         border: 1px solid white;"
+                        />
+                        <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        {{#if user.admin}}<a class="dropdown-item" href="/admin">QUẢN TRỊ</a>{{/if}}
+                        <a class="dropdown-item" href="/settings">CÀI ĐẶT</a>
+                        <div class="dropdown-divider"></div>
+                        <form method="post" action="/logout">
+                            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+                            <button type="submit" class="btn btn-link dropdown-item">ĐĂNG XUẤT</button>
+                        </form>
+                    </div>
+                </li>
+                {{else}}
+                <li class="nav-item ml-auto"><a class="nav-link" href="/register">ĐĂNG KÝ</a><li>
+                <li class="nav-item"><a class="nav-link" href="/login">ĐĂNG NHẬP</a><li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</nav>
+
