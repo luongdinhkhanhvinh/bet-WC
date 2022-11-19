@@ -34,7 +34,7 @@ Now create a shell script (e.g. `run.sh`):
 #!/usr/bin/env bash
 
 # Set publicly available domain name (without trailing slash)
-export ORIGIN=http://localhost:8080
+export ORIGIN=http://localhost:8081
 
 # PostgreSQL connection
 export DB_HOST=localhost

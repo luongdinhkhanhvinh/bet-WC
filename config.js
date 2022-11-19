@@ -13,7 +13,7 @@ module.exports = {
           }
     },
 
-    httpPort: process.env.PORT || 8080,
+    httpPort: process.env.PORT || 8081,
     sessionSecret: process.env.SESSION_SECRET || "octocat",
 
     // Timezone offset used for all datetime outputs (by moment.js)
