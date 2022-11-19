@@ -57,6 +57,19 @@ router.get("/autoupdate_match_teams", async (req, res) => {
 
   const result = [];
 
+  knex.transaction(function (trx) {
+    return Promise.all([
+      knex("foo").insert({ name: "My Name" }),
+      knex("bar").insert({ field: "Value" }),
+    ]);
+    // ---- or something like ----
+    return Promise.all(
+      SOME_INPUT_VALUES.map(function (value) {
+        return knex("foo_bar").update("lul", value.lul).where("id", value.id);
+      })
+    );
+  });
+
   await knex.transaction(async (trx) => {
     for (const m of matches) {
       const matchData = matchMap.get(m.fifa_id);
