@@ -1,3 +1,4 @@
+fs = require('fs');
 module.exports = {
     origin: process.env.ORIGIN || "http://localhost:8080",
     db: {
@@ -7,6 +8,9 @@ module.exports = {
         port: process.env.DB_PORT || 25060,
         database: process.env.DB_NAME || "cup2022",
         dialect: "postgres",
+        ssl: {
+            rejectUnauthorized: false
+          }
     },
 
     httpPort: process.env.PORT || 8080,
