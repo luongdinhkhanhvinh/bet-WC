@@ -13,6 +13,7 @@ module.exports = {
       ssl: {
         rejectUnauthorized: false,
       },
+      connectTimeout: 90000
     },
     migrations: {
       tableName: "knex_migrations",
@@ -38,6 +39,7 @@ module.exports = {
       ssl: {
         rejectUnauthorized: false,
       },
+      connectTimeout: 90000
     },
     pool: {
       // See here for all config options:
