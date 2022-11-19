@@ -68,7 +68,9 @@ passport.deserializeUser(function (id, done) {
 
 hbs.registerPartials(__dirname + "/views/partials");
 
+
 const app = express();
+
 app.set("view engine", "hbs");
 app.set("views", __dirname + "/views");
 app.set("trust proxy", config.trustProxy);

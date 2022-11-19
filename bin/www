@@ -58,6 +58,7 @@ function onError(error) {
   }
 
   var bind = typeof port === "string" ? "Pipe " + port : "Port " + port;
+  console.log("🚀 ~ file: www ~ line 61 ~ onError ~ bind", bind);
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
@@ -67,7 +68,7 @@ function onError(error) {
       break;
     case "EADDRINUSE":
       console.error(bind + " is already in use");
-      // process.exit(1);
+      process.exit(1);
       break;
     default:
       throw error;
@@ -81,7 +82,7 @@ function onError(error) {
 function onListening() {
   var addr = server.address();
   var bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
-  console.log("🚀 ~ file: www ~ line 86 ~ onListening ~ bind", bind , addr);
+  console.log("🚀 ~ file: www ~ line 86 ~ onListening ~ bind", bind, addr);
 
   for (let line of startupMessage.split("\n")) {
     console.log(line);
