@@ -11,8 +11,8 @@ module.exports = {
       password: "AVNS_w6o_w8PBxYdl3Wo8SMK",
       application_name: "knex-development",
       ssl: {
-        rejectUnauthorized: false
-      }
+        rejectUnauthorized: false,
+      },
     },
     migrations: {
       tableName: "knex_migrations",
@@ -27,12 +27,17 @@ module.exports = {
   production: {
     client: "postgresql",
     connection: {
-      host: process.env.PGHOST,
-      port: process.env.PGPORT,
-      database: process.env.PGDATABASE,
-      user: process.env.PGUSER,
-      password: process.env.PGPASSWORD,
+      host:
+        process.env.PGHOST ||
+        "db-postgresql-sgp1-42824-do-user-12916083-0.b.db.ondigitalocean.com",
+      port: process.env.PGPORT || 25060,
+      database: process.env.PGDATABASE || "cup2022",
+      user: process.env.PGUSER || "doadmin",
+      password: process.env.PGPASSWORD || "AVNS_w6o_w8PBxYdl3Wo8SMK",
       application_name: "knex-production",
+      ssl: {
+        rejectUnauthorized: false,
+      },
     },
     pool: {
       // See here for all config options:
