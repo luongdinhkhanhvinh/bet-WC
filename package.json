@@ -5,7 +5,12 @@
   "scripts": {
     "start": "NODE_ENV=development node ./bin/www"
   },
+  "engines": {
+    "node": "v12.22.12",
+    "npm": "6.14.16"
+  },
   "dependencies": {
+    "12": "^1.0.2",
     "axios": "^0.21.2",
     "bcrypt": "^5.1.0",
     "bootstrap": "^4.6.0",
@@ -22,7 +27,7 @@
     "hbs": "^4.1.2",
     "helmet": "^4.6.0",
     "jquery": "^3.6.0",
-    "knex": "^0.95.6",
+    "knex": "^0.20.8",
     "moment": "^2.29.3",
     "moment-timezone": "^0.5.38",
     "morgan": "^1.10.0",
