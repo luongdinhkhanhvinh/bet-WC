@@ -5,10 +5,6 @@
   "scripts": {
     "start": "NODE_ENV=development node ./bin/www"
   },
-  "engines": {
-    "node": "v12.22.7",
-    "npm": "6.14.16"
-  },
   "dependencies": {
     "12": "^1.0.2",
     "axios": "^0.21.2",
