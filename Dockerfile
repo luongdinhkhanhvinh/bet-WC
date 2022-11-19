@@ -9,6 +9,6 @@ RUN npm install
 
 COPY . /app
 
-ENV NODE_ENV production
+ENV NODE_ENV development
 ENV TRUST_PROXY 1
-CMD ["./entrypoint.sh"]
+RUN npm start
