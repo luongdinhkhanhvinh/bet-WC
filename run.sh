@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Set publicly available domain name (without trailing slash)
-export ORIGIN=http://localhost
+export ORIGIN=http://localhost:8081
 
 # PostgreSQL connection
 export DB_HOST=db-postgresql-sgp1-42824-do-user-12916083-0.b.db.ondigitalocean.com
