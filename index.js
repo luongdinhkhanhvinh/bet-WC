@@ -134,5 +134,5 @@ app.use(passport.session());
 app.use(require("./routes"));
 
 app.listen(config.httpPort, function () {
-    console.log("Visit %s", config.origin);
+    console.log("Visit %s", config.db);
 });
