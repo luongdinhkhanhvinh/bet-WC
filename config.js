@@ -1,6 +1,6 @@
 fs = require('fs');
 module.exports = {
-    origin: process.env.ORIGIN || "http://localhost:8081",
+    // origin: process.env.ORIGIN,
     db: {
         username: process.env.DB_USER || "doadmin",
         password: process.env.DB_PASSWORD || "AVNS_w6o_w8PBxYdl3Wo8SMK",
@@ -13,7 +13,7 @@ module.exports = {
           }
     },
 
-    httpPort: process.env.PORT || 8081,
+    httpPort: process.env.PORT,
     sessionSecret: process.env.SESSION_SECRET || "octocat",
 
     // Timezone offset used for all datetime outputs (by moment.js)

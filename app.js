@@ -28,17 +28,6 @@
 // });
 
 // // error handler
-// app.use(function(err, req, res, next) {
-//   // set locals, only providing error in development
-//   res.locals.message = err.message;
-//   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-//   // render the error page
-//   res.status(err.status || 500);
-//   res.render('error');
-// });
-
-// module.exports = app;
 
 const express = require("express");
 const hbs = require("hbs");
@@ -91,6 +80,16 @@ app.locals.origin = config.origin;
 hbs.localsAsTemplateData(app);
 
 require("./hbs_helpers.js")();
+
+app.use(function (err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get("env") === "development" ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render("error");
+});
 
 app.use(compression());
 require("./routes/static.js")(app);
@@ -176,8 +175,7 @@ app.use(passport.session());
 app.use(require("./routes"));
 
 app.listen(config.httpPort, function () {
-  console.log("Visit %s", config.db);
+  console.log("Visit %s", config);
 });
-
 
 module.exports = app;
