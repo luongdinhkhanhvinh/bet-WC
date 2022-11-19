@@ -1,0 +1,72 @@
+{{#> layout}}
+{{#*inline "head"}}
+<title>Settings - {{@websiteName}}</title>
+{{/inline}}
+{{#*inline "body"}}
+{{> navbar}}
+<div class="container top-70">
+
+{{#if error}}
+<div class="alert alert-danger" role="alert">
+    {{error}}
+</div>
+{{/if}}
+
+<h2 class="text-color-white">Cài đặt chung</h2>
+<form method="post" action="/settings">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <div class="form-group">
+        <label class="text-color-white" for="name">Tên (3 đến 30 kí tự)</label>
+        <input  type="text" minlength="3" maxlength="30" required name="name" class="form-control" id="name" placeholder="Μορφεύς" value="{{user.name}}">
+    </div>
+    <button type="submit" class="btn btn-secondary">Lưu</button>
+</form>
+{{!-- <h2 class="text-color-white">Tài khoản được kết nối</h2> --}}
+
+{{!-- {{#if enabledFacebook}}
+{{#if user.facebookId}}
+<div class="alert alert-success">
+<strong>You've connected your Facebook account!</strong>
+<form method="post" action="/disconnect/facebook">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <button type="submit" class="btn btn-outline-danger btn-sm mt-3">Disconnect Facebook</button>
+</form>
+</div>
+{{else}}
+<div class="alert alert-info">
+<a class="btn btn-primary" href="/connect/facebook">Connect Facebook</a>
+<strong>You want to use your Facebook account for login?</strong>
+We will NOT store any additional information except for your profile ID.
+</div>
+{{/if}}
+{{else}}
+<div class="alert alert-warning">
+    Facebook Login disabled.
+</div>
+{{/if}}
+
+{{#if enabledGoogle}}
+{{#if user.googleId}}
+<div class="alert alert-success">
+<strong>You've connected your Google account!</strong>
+<form method="post" action="/disconnect/google">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <button type="submit" class="btn btn-outline-danger btn-sm mt-3">Disconnect Google</button>
+</form>
+</div>
+{{else}}
+<div class="alert alert-info">
+<a class="btn btn-primary" href="/connect/google">Connect Google</a>
+<strong>You want to use your Google account for login?</strong>
+We will NOT store any additional information except for your profile ID.
+</div>
+{{/if}}
+{{else}}
+<div class="alert alert-warning">
+    Google Login disabled.
+</div>
+{{/if}} --}}
+
+</div>
+{{/inline}}
+{{/layout}}

@@ -1,0 +1,153 @@
+{{#> layout}}
+{{#*inline "head"}}
+<title>Live Matches - {{@websiteName}}</title>
+<style>
+    .highlight-friend {
+        background-color: #F8DE7E;
+        padding: 3px 5px;
+        display:inline-block;
+        border-radius: 3px;
+    }
+    .highlight-me {
+        background-color: #ffd700;
+        padding: 3px 5px;
+        display:inline-block;
+        border-radius: 3px;
+    }
+</style>
+{{/inline}}
+{{#*inline "body"}}
+{{> navbar}}
+<div class="container top-70">
+{{#if matches}}
+{{#each matches}}
+<div class="card mb-2">
+    <div class="card-header">
+        <strong>{{hometeam}} : {{awayteam}}</strong> ({{matchtype}})
+        <span class="label label-default">{{tv}}</span>
+        {{> score_factor score_factor }}
+        <small>{{newsDate starts_at}}</small>
+    </div>
+    <div class="card-body">
+        <div class="progress">
+            <div class="progress-bar bg-dark" role="progressbar" style="width: {{winnerhome}}%;">
+                {{winnerhome}}% {{hometeam}}
+            </div>
+            <div class="progress-bar text-dark" role="progressbar" style="width: {{draw}}%;background-color:#ccc;">
+                {{draw}}% Draw
+            </div>
+            <div class="progress-bar bg-secondary" role="progressbar" style="width: {{winneraway}}%;">
+                {{winneraway}}% {{awayteam}}
+            </div>
+        </div>
+    </div>
+    <ul class="list-group list-group-flush">
+        {{#if bets.home}}
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-md-2"><em>{{hometeam}}</em></div>
+                <div class="col-md-10">
+                    {{#each bets.home}}
+                        {{#if @first}}{{else}}, {{/if}}
+                        <a href="/user/{{id}}" {{#if friend}}class="highlight-friend"{{/if}}{{#if me}}class="highlight-me"{{/if}}>{{name}}</a>
+                        {{goalsHome}}:{{goalsAway}}
+                    {{/each}}
+                </div>
+            </div>
+        </li>
+        {{/if}}
+        {{#if bets.draw}}
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-md-2"><em>Draw</em></div>
+                <div class="col-md-10">
+                    {{#each bets.draw}}
+                        {{#if @first}}{{else}}, {{/if}}
+                        <a href="/user/{{id}}" {{#if friend}}class="highlight-friend"{{/if}}{{#if me}}class="highlight-me"{{/if}}>{{name}}</a>
+                        {{goalsHome}}:{{goalsAway}}
+                    {{/each}}
+                </div>
+            </div>
+        </li>
+        {{/if}}
+        {{#if bets.away}}
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-md-2"><em>{{awayteam}}</em></div>
+                <div class="col-md-10">
+                    {{#each bets.away}}
+                        {{#if @first}}{{else}}, {{/if}}
+                        <a href="/user/{{id}}" {{#if friend}}class="highlight-friend"{{/if}}{{#if me}}class="highlight-me"{{/if}}>{{name}}</a>
+                        {{goalsHome}}:{{goalsAway}}
+                    {{/each}}
+                </div>
+            </div>
+        </li>
+        {{/if}}
+    </ul>
+</div>
+{{/each}}
+{{else}}
+<div class="alert alert-danger" role="alert">
+    <strong>Hiện tại không có trận đấu trực tiếp.</strong>
+</div>
+{{/if}}
+
+{{#if nextMatches}}
+    <div class="card-header bg-success"><strong>Các trận đấu sắp tới</strong></div>
+        {{#each nextMatches}}
+        <li class="list-group-item" style="background:url({{asset "/board-background.png"}}) repeat fixed; margin: 50px;padding: 50px;border-radius: 10px; padding-top: 100px; padding-bottom:100px"><div class="row">
+            <div class="col-md-3 order-md-1 order-1 col-12 text-color-white" style="
+    margin-top: auto;
+    margin-bottom: auto;">{{match_type_name}} <span class="label label-default">{{tv}}</span> {{> score_factor match_type_score_factor }}</div>
+            
+            <div class="order-md-2 text-md-center order-2 col text-center text-color-white">
+                {{#if home_team_name}}
+                 <img src="https://countryflagsapi.com/png/{{{home_team_name}}}" style="
+                     height: 70px;
+                     width: 100px;
+                     border-radius: 8px;
+                     border: 1px solid;
+                ">
+                <strong style="display: block;">{{#if home_team_name}}
+                {{home_team_name}}
+               
+                {{else}}{{placeholder_home}}
+                {{/if}}
+                </strong>
+
+                {{else}}
+                {{/if}}
+                
+                
+            </div>
+            <div class="col-md-3 order-md-3 text-md-center order-1 col-12 text-color-white" style="
+    margin-top: auto;
+    margin-bottom: auto;
+">{{newsDate starts_at}}</div>
+            <div class="order-md-2 text-md-center order-2 col text-center text-color-white">
+                {{#if away_team_name}}
+                 <img src="https://countryflagsapi.com/png/{{{away_team_name}}}" style="
+                     height: 70px;
+                     width: 100px;
+                     border-radius: 8px;
+                     border: 1px solid;
+                ">
+                <strong style="display: block;">{{#if away_team_name}}
+                {{away_team_name}}
+               
+                {{else}}{{placeholder_home}}
+                {{/if}}
+                </strong>
+
+                {{else}}
+                {{/if}}
+                
+                
+            </div>
+        </div></li>
+        {{/each}}
+{{/if}}
+</div>
+{{/inline}}
+{{/layout}}
