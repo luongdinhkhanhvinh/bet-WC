@@ -1,0 +1,149 @@
+{{#> layout}}
+{{#*inline "head"}}
+<link rel="canonical" href="/highscore">
+<title>Highscore - {{@websiteName}}</title>
+<style>
+.table > tbody tr > td {
+    border-top: 1px solid #aaa !important;
+}
+.ordered-column {
+    color: #1d3;
+}
+tr.user-is-friend > td {
+    background-color: #F8DE7E;
+}
+tr.user-is-me > td {
+    background-color: #ffd700;
+}
+.history-up {
+    color: #86B404;
+}
+.history-down {
+    color: #DF3A01;
+}
+.medal {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    white-space: nowrap;
+    border-radius: 50%;
+    border: 1px solid gray;
+    color: #343a40;
+    width: 35px;
+    height: 35px;
+}
+.medal-1 {
+    background-color: #F7F6A8;
+}
+.medal-2 {
+    background-color: #DCE5E5;
+}
+.medal-3 {
+    background-color: #FFDAB9;
+}
+</style>
+{{/inline}}
+{{#*inline "body"}}
+{{> navbar}}
+<div class="container top-70">
+
+<input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+{{#if loggedIn}}
+{{#if (not hasFriends)}}
+<div class="alert alert-info">
+    Bạn có thể thêm bạn bè bằng cách nhấp vào nút &#x2795;.
+    Điều này sẽ làm nổi bật chúng trên tổng quan về các trận đấu trực tiếp và trước đây.
+</div>
+{{/if}}
+<p>
+{{#if friends}}
+<a href="/highscore">Hiển thị tất cả</a>
+{{else}}
+<a href="/highscore?friends=1">Chỉ hiển thị bạn bè</a>
+{{/if}}
+</p>
+{{/if}}
+
+{{#if friends}}
+<canvas id="friend-history" width="100" height="50" style="background-color: white; margin-bottom: 20px"></canvas>
+{{/if}}
+
+<div class="table-responsive-md">
+<table id="highscore" class="table table-striped" style="border-radius: 8px;">
+<thead>
+<tr style="background-color: white;">
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th colspan="2" class="text-center">{{> correct_bet}}</th>
+    <th colspan="2" class="text-center">{{> correct_diff}}</th>
+    <th colspan="2" class="text-center">{{> correct_winner}}</th>
+    <th>{{> wrong_bet}}</th>
+    {{#if loggedIn}}<th></th>{{/if}}
+</tr>
+<tr style="background-color: white;">
+    <th></th>
+    <th data-orderable='false'></th>
+    {{#each columns}}
+    <th>
+        {{title}}
+    </th>
+    {{/each}}
+    {{#if loggedIn}}<th data-orderable='false'><span title="Bạn bè">&#x1F465;</span></th>{{/if}}
+</tr>
+</thead>
+<tbody>
+{{#each users}}
+<tr {{#if isme}}class="user-is-me"{{/if}} {{#if isfriend}}class="user-is-friend"{{/if}}>
+    <td class="text-center">
+        {{#if (lte rank 3)}}<div class="medal medal-{{rank}}">{{/if~}}
+            <b>{{rank}}.</b>
+        {{~#if (lte rank 3)}}</div>{{/if}}
+    </td>
+    <td>
+        {{#if (gt0 rank_change)}}
+        <span class="history-up text-nowrap"><img src="{{asset "/arrow-up.svg"}}" height="14"> +{{rank_change}}</span>
+        {{/if}}
+        {{#if (lt0 rank_change)}}
+        <span class="history-down text-nowrap"><img src="{{asset "/arrow-down.svg"}}" height="14"> {{rank_change}}</span>
+        {{/if}}
+    </td>
+    <td>
+        <a href="/user/{{id}}">{{name}}</a>
+    </td>
+    <td class="{{#if (isZero score)}}is-zero{{/if}} text-danger"><b>{{score}}</b></td>
+    <td class="{{#if (isZero score_change)}}is-zero{{/if}} text-danger">+{{score_change}}</td>
+    <td class="{{#if (isZero count3)}}is-zero{{/if}} text-danger" style="border-left:1px solid #aaa;">{{count3}}</td>
+    <td class="{{#if (isZero total3)}}is-zero{{/if}} text-danger">{{total3}}</td>
+    <td class="{{#if (isZero count2)}}is-zero{{/if}} text-danger" style="border-left:1px solid #aaa;">{{count2}}</td>
+    <td class="{{#if (isZero total2)}}is-zero{{/if}} text-danger">{{total2}}</td>
+    <td class="{{#if (isZero count1)}}is-zero{{/if}} text-danger" style="border-left:1px solid #aaa;">{{count1}}</td>
+    <td class="{{#if (isZero total1)}}is-zero{{/if}} text-danger">{{total1}}</td>
+    <td class="{{#if (isZero count0)}}is-zero{{/if}} text-danger" style="border-left:1px solid #aaa;">{{count0}}</td>
+    {{#if @root.loggedIn}}
+    <td style="border-left:1px solid #aaa;">
+        {{#if isme}}
+        <span title="Đó là bạn!">&#x1F464;</span>
+        {{else}}
+        <button data-id="{{id}}" class="toggle-friend btn btn-secondary btn-sm">{{#if isfriend}}&#x2796;{{else}}&#x2795;{{/if}}</button>
+        {{/if}}
+    </td>
+    {{/if}}
+</tr>
+{{/each}}
+</tbody>
+</table>
+</div>
+
+</div>
+{{/inline}}
+{{#*inline "scripts"}}
+<script type="text/javascript" src="/static/js/friend.js"></script>
+<script type="text/javascript" src="/static/js/friend_history.js"></script>
+{{/inline}}
+{{/layout}}

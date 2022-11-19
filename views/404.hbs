@@ -1,0 +1,16 @@
+{{#> layout}}
+{{#*inline "head"}}
+<title>Error 404 - {{@websiteName}}</title>
+{{/inline}}
+{{#*inline "body"}}
+<div class="container text-center top-70">
+    <a href="/">
+        {{#if loggedIn}}
+        <img style="max-width:100%;" src="{{asset "/doge404.png"}}">
+        {{else}}
+        <img style="max-width:100%;" src="{{asset "/grumpy404.png"}}">
+        {{/if}}
+    </a>
+</div>
+{{/inline}}
+{{/layout}}

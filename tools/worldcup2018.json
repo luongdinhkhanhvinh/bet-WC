@@ -1,0 +1,476 @@
+{
+    "teams": [
+        {
+            "code": "ARG",
+            "name": "Argentina"
+        },
+        {
+            "code": "AUS",
+            "name": "Australia"
+        },
+        {
+            "code": "BEL",
+            "name": "Belgium"
+        },
+        {
+            "code": "BRA",
+            "name": "Brazil"
+        },
+        {
+            "code": "COL",
+            "name": "Colombia"
+        },
+        {
+            "code": "CRC",
+            "name": "Costa Rica"
+        },
+        {
+            "code": "CRO",
+            "name": "Croatia"
+        },
+        {
+            "code": "DEN",
+            "name": "Denmark"
+        },
+        {
+            "code": "EGY",
+            "name": "Egypt"
+        },
+        {
+            "code": "ENG",
+            "name": "England"
+        },
+        {
+            "code": "FRA",
+            "name": "France"
+        },
+        {
+            "code": "GER",
+            "name": "Germany"
+        },
+        {
+            "code": "ISL",
+            "name": "Iceland"
+        },
+        {
+            "code": "IRN",
+            "name": "IR Iran"
+        },
+        {
+            "code": "JPN",
+            "name": "Japan"
+        },
+        {
+            "code": "KOR",
+            "name": "Korea Republic"
+        },
+        {
+            "code": "MEX",
+            "name": "Mexico"
+        },
+        {
+            "code": "MAR",
+            "name": "Morocco"
+        },
+        {
+            "code": "NGA",
+            "name": "Nigeria"
+        },
+        {
+            "code": "PAN",
+            "name": "Panama"
+        },
+        {
+            "code": "PER",
+            "name": "Peru"
+        },
+        {
+            "code": "POL",
+            "name": "Poland"
+        },
+        {
+            "code": "POR",
+            "name": "Portugal"
+        },
+        {
+            "code": "RUS",
+            "name": "Russia"
+        },
+        {
+            "code": "KSA",
+            "name": "Saudi Arabia"
+        },
+        {
+            "code": "SEN",
+            "name": "Senegal"
+        },
+        {
+            "code": "SRB",
+            "name": "Serbia"
+        },
+        {
+            "code": "ESP",
+            "name": "Spain"
+        },
+        {
+            "code": "SWE",
+            "name": "Sweden"
+        },
+        {
+            "code": "SUI",
+            "name": "Switzerland"
+        },
+        {
+            "code": "TUN",
+            "name": "Tunisia"
+        },
+        {
+            "code": "URU",
+            "name": "Uruguay"
+        }
+    ],
+    "matches": [
+        {
+            "home": "RUS",
+            "away": "KSA",
+            "when": "2018-06-14T15:00:00Z",
+            "type": "A"
+        },
+        {
+            "home": "EGY",
+            "away": "URU",
+            "when": "2018-06-15T12:00:00Z",
+            "type": "A"
+        },
+        {
+            "home": "MAR",
+            "away": "IRN",
+            "when": "2018-06-15T15:00:00Z",
+            "type": "B"
+        },
+        {
+            "home": "POR",
+            "away": "ESP",
+            "when": "2018-06-15T18:00:00Z",
+            "type": "B"
+        },
+        {
+            "home": "FRA",
+            "away": "AUS",
+            "when": "2018-06-16T10:00:00Z",
+            "type": "C"
+        },
+        {
+            "home": "ARG",
+            "away": "ISL",
+            "when": "2018-06-16T13:00:00Z",
+            "type": "D"
+        },
+        {
+            "home": "PER",
+            "away": "DEN",
+            "when": "2018-06-16T16:00:00Z",
+            "type": "C"
+        },
+        {
+            "home": "CRO",
+            "away": "NGA",
+            "when": "2018-06-16T19:00:00Z",
+            "type": "D"
+        },
+        {
+            "home": "CRC",
+            "away": "SRB",
+            "when": "2018-06-17T12:00:00Z",
+            "type": "E"
+        },
+        {
+            "home": "GER",
+            "away": "MEX",
+            "when": "2018-06-17T15:00:00Z",
+            "type": "F"
+        },
+        {
+            "home": "BRA",
+            "away": "SUI",
+            "when": "2018-06-17T18:00:00Z",
+            "type": "E"
+        },
+        {
+            "home": "SWE",
+            "away": "KOR",
+            "when": "2018-06-18T12:00:00Z",
+            "type": "F"
+        },
+        {
+            "home": "BEL",
+            "away": "PAN",
+            "when": "2018-06-18T15:00:00Z",
+            "type": "G"
+        },
+        {
+            "home": "TUN",
+            "away": "ENG",
+            "when": "2018-06-18T18:00:00Z",
+            "type": "G"
+        },
+        {
+            "home": "COL",
+            "away": "JPN",
+            "when": "2018-06-19T12:00:00Z",
+            "type": "H"
+        },
+        {
+            "home": "POL",
+            "away": "SEN",
+            "when": "2018-06-19T15:00:00Z",
+            "type": "H"
+        },
+        {
+            "home": "RUS",
+            "away": "EGY",
+            "when": "2018-06-19T18:00:00Z",
+            "type": "A"
+        },
+        {
+            "home": "POR",
+            "away": "MAR",
+            "when": "2018-06-20T12:00:00Z",
+            "type": "B"
+        },
+        {
+            "home": "URU",
+            "away": "KSA",
+            "when": "2018-06-20T15:00:00Z",
+            "type": "A"
+        },
+        {
+            "home": "IRN",
+            "away": "ESP",
+            "when": "2018-06-20T18:00:00Z",
+            "type": "B"
+        },
+        {
+            "home": "DEN",
+            "away": "AUS",
+            "when": "2018-06-21T12:00:00Z",
+            "type": "C"
+        },
+        {
+            "home": "FRA",
+            "away": "PER",
+            "when": "2018-06-21T15:00:00Z",
+            "type": "C"
+        },
+        {
+            "home": "ARG",
+            "away": "CRO",
+            "when": "2018-06-21T18:00:00Z",
+            "type": "D"
+        },
+        {
+            "home": "BRA",
+            "away": "CRC",
+            "when": "2018-06-22T12:00:00Z",
+            "type": "E"
+        },
+        {
+            "home": "NGA",
+            "away": "ISL",
+            "when": "2018-06-22T15:00:00Z",
+            "type": "D"
+        },
+        {
+            "home": "SRB",
+            "away": "SUI",
+            "when": "2018-06-22T18:00:00Z",
+            "type": "E"
+        },
+        {
+            "home": "BEL",
+            "away": "TUN",
+            "when": "2018-06-23T12:00:00Z",
+            "type": "G"
+        },
+        {
+            "home": "KOR",
+            "away": "MEX",
+            "when": "2018-06-23T15:00:00Z",
+            "type": "F"
+        },
+        {
+            "home": "GER",
+            "away": "SWE",
+            "when": "2018-06-23T18:00:00Z",
+            "type": "F"
+        },
+        {
+            "home": "ENG",
+            "away": "PAN",
+            "when": "2018-06-24T12:00:00Z",
+            "type": "G"
+        },
+        {
+            "home": "JPN",
+            "away": "SEN",
+            "when": "2018-06-24T15:00:00Z",
+            "type": "H"
+        },
+        {
+            "home": "POL",
+            "away": "COL",
+            "when": "2018-06-24T18:00:00Z",
+            "type": "H"
+        },
+        {
+            "home": "URU",
+            "away": "RUS",
+            "when": "2018-06-25T14:00:00Z",
+            "type": "A"
+        },
+        {
+            "home": "KSA",
+            "away": "EGY",
+            "when": "2018-06-25T14:00:00Z",
+            "type": "A"
+        },
+        {
+            "home": "ESP",
+            "away": "MAR",
+            "when": "2018-06-25T18:00:00Z",
+            "type": "B"
+        },
+        {
+            "home": "IRN",
+            "away": "POR",
+            "when": "2018-06-25T18:00:00Z",
+            "type": "B"
+        },
+        {
+            "home": "AUS",
+            "away": "PER",
+            "when": "2018-06-26T14:00:00Z",
+            "type": "C"
+        },
+        {
+            "home": "DEN",
+            "away": "FRA",
+            "when": "2018-06-26T14:00:00Z",
+            "type": "C"
+        },
+        {
+            "home": "NGA",
+            "away": "ARG",
+            "when": "2018-06-26T18:00:00Z",
+            "type": "D"
+        },
+        {
+            "home": "ISL",
+            "away": "CRO",
+            "when": "2018-06-26T18:00:00Z",
+            "type": "D"
+        },
+        {
+            "home": "KOR",
+            "away": "GER",
+            "when": "2018-06-27T14:00:00Z",
+            "type": "F"
+        },
+        {
+            "home": "MEX",
+            "away": "SWE",
+            "when": "2018-06-27T14:00:00Z",
+            "type": "F"
+        },
+        {
+            "home": "SRB",
+            "away": "BRA",
+            "when": "2018-06-27T18:00:00Z",
+            "type": "E"
+        },
+        {
+            "home": "SUI",
+            "away": "CRC",
+            "when": "2018-06-27T18:00:00Z",
+            "type": "E"
+        },
+        {
+            "home": "JPN",
+            "away": "POL",
+            "when": "2018-06-28T14:00:00Z",
+            "type": "H"
+        },
+        {
+            "home": "SEN",
+            "away": "COL",
+            "when": "2018-06-28T14:00:00Z",
+            "type": "H"
+        },
+        {
+            "home": "PAN",
+            "away": "TUN",
+            "when": "2018-06-28T18:00:00Z",
+            "type": "G"
+        },
+        {
+            "home": "ENG",
+            "away": "BEL",
+            "when": "2018-06-28T18:00:00Z",
+            "type": "G"
+        }
+    ],
+    "types": [
+        {
+            "code": "A",
+            "name": "Group A"
+        },
+        {
+            "code": "B",
+            "name": "Group B"
+        },
+        {
+            "code": "C",
+            "name": "Group C"
+        },
+        {
+            "code": "D",
+            "name": "Group D"
+        },
+        {
+            "code": "E",
+            "name": "Group E"
+        },
+        {
+            "code": "F",
+            "name": "Group F"
+        },
+        {
+            "code": "G",
+            "name": "Group G"
+        },
+        {
+            "code": "H",
+            "name": "Group H"
+        },
+        {
+            "code": "R16",
+            "name": "Round of 16"
+        },
+        {
+            "code": "QF",
+            "name": "Quarter-final"
+        },
+        {
+            "code": "SF",
+            "name": "Semi-final"
+        },
+        {
+            "code": "TP",
+            "name": "Play-off for third place"
+        },
+        {
+            "code": "FIN",
+            "name": "Final"
+        }
+    ]
+}

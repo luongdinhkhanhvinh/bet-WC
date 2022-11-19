@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <!-- Open Graph data -->
+        <meta property="og:url" content="{{origin}}">
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="en_US">
+        <meta property="og:title" content="{{@websiteName}}">
+        <meta property="og:description" content="Who is the better forecaster of football matches? Make bets for future matches, collect scores and compete with your friends.">
+        <meta property="og:image" content="{{origin}}{{asset "/favicon-200x200.png"}}">
+
+        <link rel="icon" type="image/png" href="{{asset "/favicon-32x32.png"}}" sizes="32x32">
+        <link href="{{@vendorCssPath}}" rel="stylesheet">
+         <style type="text/css">
+         
+        <style>
+        html {
+            overflow-y: scroll;
+        }
+        body {
+            padding-top: 70px;
+        }
+        .btn-logout {
+            width: 100%;
+            padding: 3px 20px !important;
+            text-align: left !important;
+        }
+        .is-zero {
+            color: #bbb;
+        }
+        /* Register & Login */
+        .form-signin {
+            max-width: 600px;
+            padding: 15px;
+            margin: 0 auto;
+        }
+        .form-signin-heading {
+            margin-top: 0px;
+        }
+        .form-signin .form-signin-heading {
+            margin-bottom: 10px;
+        }
+        .text-color-white {
+            color: white;
+        }
+        .top-70 {
+            margin-top: 80px;
+        }
+        .space-15 {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        </style>
+        {{> head}}
+    </head>
+    <body 
+    style="background:url({{asset "/WorldCup_BG.jpg"}}) repeat fixed;"
+    >
+        {{> body}}
+        <script type="text/javascript" src="{{@vendorJsPath}}"></script>
+        {{#> scripts}}{{/scripts}}
+    </body>
+</html>
