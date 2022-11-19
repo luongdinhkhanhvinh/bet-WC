@@ -14,7 +14,7 @@ var http = require("http");
 function normalizePort(val) {
   console.log("🚀 ~ file: www ~ line 15 ~ normalizePort ~ val", val);
   var port = parseInt(val, 10);
-  console.log("🚀 ~ file: www ~ line 16 ~ normalizePort ~ port", port);
+  console.log("🚀 ~ file: www ~ line 16 ~ normalizePort ~ port", process.env.NODE_ENV);
 
   if (isNaN(port)) {
     // named pipe
