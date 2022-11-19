@@ -59,8 +59,8 @@ router.get("/autoupdate_match_teams", async (req, res) => {
 
   knex.transaction(function (trx) {
     return Promise.all([
-      knex("foo").insert({ name: "My Name" }),
-      knex("bar").insert({ field: "Value" }),
+      knex("foo").insert({ name: "My Name" }).transacting(trx),
+      knex("bar").insert({ field: "Value" }).transacting(trx),
     ]);
     // ---- or something like ----
     return Promise.all(
