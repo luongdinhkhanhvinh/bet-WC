@@ -1,6 +1,6 @@
 module.exports = {
   development: {
-    client: "postgresql",
+    client: "pg",
     connection: {
       host:
         process.env.PGHOST ||
@@ -43,7 +43,7 @@ module.exports = {
     },
   },
   production: {
-    client: "postgresql",
+    client: "pg",
     connection: {
       host:
         process.env.PGHOST ||

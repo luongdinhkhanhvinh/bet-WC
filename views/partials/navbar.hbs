@@ -22,6 +22,7 @@
             width: 90%;
 ">
                 {{#if loggedIn}}
+                <li class="nav-item space-15"><a class="nav-link" href="/intro">LUẬT</a></li>
                 <li class="nav-item space-15"><a class="nav-link" href="/me">HỒ SƠ</a></li>
                 <li class="nav-item space-15"><a class="nav-link" href="/mybets">CƯỢC
                     {{#if (gt upcomingMatchesWithoutBet 0)}}<span class="badge badge-warning">{{ upcomingMatchesWithoutBet }}</span>{{/if}}
@@ -71,7 +72,7 @@
                     </div>
                 </li>
                 {{else}}
-                <li class="nav-item ml-auto"><a class="nav-link" href="/register">ĐĂNG KÝ</a><li>
+                {{!-- <li class="nav-item ml-auto"><a class="nav-link" href="/register">ĐĂNG KÝ</a><li> --}}
                 <li class="nav-item"><a class="nav-link" href="/login">ĐĂNG NHẬP</a><li>
                 {{/if}}
             </ul>
