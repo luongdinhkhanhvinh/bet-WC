@@ -3,13 +3,13 @@
 <title>{{displayedUser.name}} - {{@websiteName}}</title>
 <style>
 .result-correct {
-    background-color: #009900;
+    color: #009900;
 }
 .result-diff {
-    background-color: #00e600;
+    color: #00e600;
 }
 .result-winner {
-    background-color: #ccffcc;
+    color: #ccffcc;
 }
 </style>
 {{/inline}}
@@ -30,7 +30,7 @@
     </tr>
     </thead>
     {{#each matches}}
-    <tr class="result-{{result}} text-color-white">
+    <tr class="text-color-white">
         <td class="small"><span class="d-none d-sm-inline">{{calendar starts_at}}</span><span class="d-sm-none">{{calendarShort starts_at}}</span></td>
         <td class="small">
             <span class="d-none d-sm-inline">{{match_type_name}}</span>
@@ -49,7 +49,7 @@
         <td class="text-center">
         {{showGoals bet_goals_home}} : {{showGoals bet_goals_away}}
         </td>
-        <td class="text-center {{#if (isZero score)}}is-zero{{/if}}">
+        <td class="text-center result-{{result}} {{#if (isZero score)}}is-zero{{/if}}">
         {{score}}
         </td>
     </tr>

@@ -36,12 +36,15 @@ tr.user-is-me > td {
 }
 .medal-1 {
     background-color: #F7F6A8;
+    color: #343a40;
 }
 .medal-2 {
     background-color: #DCE5E5;
+    color: #343a40;
 }
 .medal-3 {
     background-color: #FFDAB9;
+    color: #343a40;
 }
 </style>
 {{/inline}}
@@ -102,7 +105,7 @@ tr.user-is-me > td {
 <tr {{#if isme}}class="user-is-me"{{/if}} {{#if isfriend}}class="user-is-friend"{{/if}}>
     <td class="text-center">
         {{#if (lte rank 3)}}<div class="medal medal-{{rank}}">{{/if~}}
-            <b>{{rank}}.</b>
+            <b>{{rank}}</b>
         {{~#if (lte rank 3)}}</div>{{/if}}
     </td>
     <td>

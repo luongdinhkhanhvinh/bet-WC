@@ -5,11 +5,11 @@ const config = require('./config');
 module.exports = () => {
     moment.updateLocale('en', {
         calendar : {
-            lastDay : '[Yesterday at] H:mm',
-            sameDay : '[Today at] H:mm',
-            nextDay : '[Tomorrow at] H:mm',
-            lastWeek : '[Last] dddd [at] H:mm',
-            nextWeek : 'dddd [at] H:mm',
+            lastDay : '[Hôm qua lúc] H:mm',
+            sameDay : '[Hôm nay lúc] H:mm',
+            nextDay : '[Ngày mai lúc] H:mm',
+            lastWeek : '[Cuối] dddd [at] H:mm',
+            nextWeek : 'dddd [lúc] H:mm',
             sameElse : 'L'
         }
     });
